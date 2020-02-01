@@ -1,11 +1,10 @@
 <template>
-  <div class="hello">
+  <div class="emperors">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+    <div v-for="(emp, i) in emperors" :key="i">
+        <h2>{{emperors[i].name}}</h2>
+        <p>{{emperors[i].dateOfBirth}}</p>
+    </div>
   </div>
 </template>
 
@@ -16,7 +15,7 @@ import _ from 'lodash';
 import rawData from '../../data/emperors.json';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Emperors',
   props: {
     msg: String
   },
@@ -28,8 +27,17 @@ export default {
     }
   },
   mounted(){
-    this.episodes = _.map(rawData, emp => {
-      
+    this.emperors = _.map(rawData, emp => {
+      return {
+        name: (emp.name),
+        dateOfBirth: new Date(emp.birth),
+        dateOfDeath: new Date(emp.death),
+        dateOfReignStart: new Date(emp.start),
+        dateOfReignEnd: new Date(emp.end),
+        causeOfDeath: emp.cause,
+        killer: emp.killer,
+        dynasty: emp.dynasty
+      }
     })
   }
 }
