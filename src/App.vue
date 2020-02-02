@@ -23,13 +23,14 @@ export default {
   font-style: normal;
 }
 #app {
-  font-family: 'AUGUSTUS', Helvetica, Arial, sans-serif;
+  font-family: 'AUGUSTUS';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
 h1{
   font-family: 'AUGUSTUS';
-  
+  text-align: center;
+  text-transform: uppercase;
 }
 </style>

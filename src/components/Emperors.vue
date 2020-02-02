@@ -1,12 +1,12 @@
 <template>
   <div class="emperors">
     <div >
-        <svg width="1200" :height="`${(Math.floor(emperors.length / 5) * canvasHeight + canvasHeight)}`">
-            <g class="emperor" v-for="(emp, i) in emperors" :key="i" :transform="`translate(${i % 5 * empWidth}, ${(Math.floor(i / 5) * canvasHeight) - emperors[i].columnSize + canvasHeight})`">
+        <svg :width="`${empWidth * 6}`" :height="`${(Math.floor(emperors.length / 5) * canvasHeight + canvasHeight + textHeight)}`">
+            <g class="emperor" v-for="(emp, i) in emperors" :key="i" :transform="`translate(${i % 5 * empWidth + 0.5*empWidth}, ${(Math.floor(i / 5) * canvasHeight) - emperors[i].columnSize + canvasHeight})`">
                 <path class="column column-fill column-outline" :transform="`scale(1,${emperors[i].columnScale})`" d="M22.11 46.25L111.95 46.25L111.95 149.38L22.11 149.38L22.11 46.25Z"></path>
                 <path class="column column-top" :transform="`translate(1,${emperors[i].columnScale * columnPlatformHeight - columnPlatformHeight})`" d="M0 0L134.06 0L134.06 46.25L0 46.25L0 0Z"></path>
                 <text class="name" :x="columnWidth / 2" :y="`${emperors[i].columnScale * columnPlatformHeight - (columnPlatformHeight/2) + (textHeight/2)}`" text-anchor="middle">{{emp.name}}</text>
-                <text class="description" :x="columnWidth / 2" :y="`${emperors[i].columnScale * columnPlatformHeight + (textHeight)}`" text-anchor="middle">{{(emperors[i].daysReigned / 365).toFixed(1)}} yr reign</text>
+                <text class="description" :x="columnWidth / 2" :y="`${emperors[i].columnScale * baseColumnHeight + (textHeight)}`" text-anchor="middle">{{(emperors[i].daysReigned / 365).toFixed(1)}} yr reign</text>
                 <!-- <text class="description" :x="columnWidth / 2" :y="`${emperors[i].columnScale * columnPlatformHeight + (textHeight * 2)}`" text-anchor="middle">Age {{(emperors[i].daysLived / 365).toFixed(1)}}</text> -->
             </g>
         </svg>
@@ -82,6 +82,7 @@ svg{
 text{
   font-family: 'AUGUSTUS';
   font-size: 1rem;
+  text-transform: uppercase;
 }
 .name {
   fill:#056608;
