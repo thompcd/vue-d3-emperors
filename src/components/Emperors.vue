@@ -1,8 +1,8 @@
 <template>
   <div class="emperors">
     <div >
-        <svg width="17000" :height="`${canvasHeight}`">
-            <g class="emperor" v-for="(emp, i) in emperors" :key="i" :transform="`translate(${i * empWidth}, ${canvasHeight - emperors[i].columnSize})`">
+        <svg width="1200" :height="`${(Math.floor(emperors.length / 5) * canvasHeight + canvasHeight)}`">
+            <g class="emperor" v-for="(emp, i) in emperors" :key="i" :transform="`translate(${i % 5 * empWidth}, ${(Math.floor(i / 5) * canvasHeight) - emperors[i].columnSize + canvasHeight})`">
                 <path class="column column-fill column-outline" :transform="`scale(1,${emperors[i].columnScale})`" d="M22.11 46.25L111.95 46.25L111.95 149.38L22.11 149.38L22.11 46.25Z"></path>
                 <path class="column column-top" :transform="`translate(1,${emperors[i].columnScale * columnPlatformHeight - columnPlatformHeight})`" d="M0 0L134.06 0L134.06 46.25L0 46.25L0 0Z"></path>
                 <text class="name" :x="columnWidth / 2" :y="`${emperors[i].columnScale * columnPlatformHeight - (columnPlatformHeight/2) + (textHeight/2)}`" text-anchor="middle">{{emp.name}}</text>
@@ -76,6 +76,9 @@ export default {
 
 .column-fill {fill:#c0cac7;}
 .column-top {fill:#C9C2BF;}
+svg{
+  margin: 2rem;
+}
 text{
   font-family: 'AUGUSTUS';
   font-size: 1rem;
