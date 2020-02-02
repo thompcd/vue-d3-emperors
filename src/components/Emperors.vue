@@ -76,9 +76,7 @@ export default {
 
 .column-fill {fill:#c0cac7;}
 .column-top {fill:#C9C2BF;}
-svg{
-  margin: 2rem;
-}
+
 text{
   font-family: 'AUGUSTUS';
   font-size: 1rem;
