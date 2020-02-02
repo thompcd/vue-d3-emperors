@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>REIGNS OF THE ROMAN EMPERORS</h1>
     <Emperors/>
   </div>
 </template>
@@ -26,5 +27,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+h1{
+  font-family: 'AUGUSTUS';
+  
 }
 </style>
