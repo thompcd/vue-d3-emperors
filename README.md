@@ -1,3 +1,5 @@
+![Roman Emperor Reigns](emperorsviz.png)
+
 # vue-d3-emperors
 
 ## Project setup
