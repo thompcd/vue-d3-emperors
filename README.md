@@ -1,5 +1,6 @@
 # vue-d3-emperors
-## A project for the data visualization society working with Amelia Wattenberger!
+## A project for the data visualization society. 
+### Thank you to Amelia Wattenberger for taking time to tutor me!
 
 ![Roman Emperor Reigns](emperorsviz.png)
 
