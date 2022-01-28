@@ -1,6 +1,7 @@
-![Roman Emperor Reigns](emperorsviz.png)
-
 # vue-d3-emperors
+## A project for the data visualization society working with Amelia Wattenberger!
+
+![Roman Emperor Reigns](emperorsviz.png)
 
 ## Project setup
 ```
